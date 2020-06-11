@@ -24,8 +24,6 @@ class _HomeState extends State<Home> {
   Future<User> getDp() async {
     final auth = Provider.of<AuthBase>(context, listen: false);
     final user = await auth.currentUser();
-    print(user);
-    print(dpUrl);
     return user;
   }
 
@@ -33,7 +31,6 @@ class _HomeState extends State<Home> {
 
   @override
   void initState() {
-    // TODO: implement initState
     getDp().then((value) {
       setState(() {
         dpUrl = value.photoUrl.toString();
@@ -81,6 +78,9 @@ class _HomeState extends State<Home> {
                           children: <Widget>[
                             Column(
                               children: <Widget>[
+                                SizedBox(
+                                  height: 10,
+                                ),
                                 dpWidget(dpUrl, 75.0),
                                 SizedBox(
                                   height: 10,

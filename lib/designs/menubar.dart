@@ -11,6 +11,7 @@ class Menubar extends StatelessWidget {
     "Chat",
     "Logout",
   ];
+
   signOutDialog(BuildContext context) {
     final auth = Provider.of<AuthBase>(context, listen: false);
     return showDialog(
